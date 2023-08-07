@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreClean.BCL.Domaine", "Do
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreClean.BCL.Shared", "CoreClean.BCL.Shared", "{02E18539-7986-4848-B159-92D211194575}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreClean.BCL.Shared", "CoreClean.BCL.Shared\CoreClean.BCL.Shared.csproj", "{D5E17CC0-C37E-4A56-9843-FC3AB7370C1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{EBA74439-96E0-4B46-AEA5-22DC14515DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBA74439-96E0-4B46-AEA5-22DC14515DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBA74439-96E0-4B46-AEA5-22DC14515DD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E17CC0-C37E-4A56-9843-FC3AB7370C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E17CC0-C37E-4A56-9843-FC3AB7370C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E17CC0-C37E-4A56-9843-FC3AB7370C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E17CC0-C37E-4A56-9843-FC3AB7370C1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{9B64DAB3-49A3-46CC-869A-E1CD90A94C77} = {F831A093-DA8E-4402-9F95-C752F41F1213}
 		{EBA74439-96E0-4B46-AEA5-22DC14515DD5} = {45170146-E33B-402D-BDFE-368B005B612E}
 		{02E18539-7986-4848-B159-92D211194575} = {F831A093-DA8E-4402-9F95-C752F41F1213}
+		{D5E17CC0-C37E-4A56-9843-FC3AB7370C1D} = {02E18539-7986-4848-B159-92D211194575}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16783E29-7691-424D-8B75-FEAFC6156EB0}
