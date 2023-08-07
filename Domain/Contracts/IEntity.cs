@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CoreClean.BCL.Domaine.Contracts;
+﻿namespace CoreClean.BCL.Domaine.Contracts;
 public interface IEntity
 {
 }
@@ -19,7 +12,7 @@ public interface IAuditableEntity : IEntity
 {
     string CreatedBy { get; set; }
 
-    DateTime CreatedOn { get; init; } 
+    DateTime CreatedOn { get; init; }
 
     string? LastModifiedBy { get; set; }
 
