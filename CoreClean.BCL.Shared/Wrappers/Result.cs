@@ -1,27 +1,7 @@
 ﻿using CoreClean.BCL.Shared.Interfaces;
 
 namespace CoreClean.BCL.Shared.Wrappers;
-public class Result : IDetailedMessage
-{
-    public Result()
-    {
-        Message = string.Empty;
-        Link = default;
-    }
-    public Result(string message)
-    {
-        Message = message;
-        Link = null;
-    }
-    public Result(string message, string link)
-    {
-        Message = message;
-        Link = link;
-    }
 
-    public string Message { get; set; }
-    public string? Link { get; set; } = null;
-}
 public class Result : IResult
 {
     public Result()
@@ -39,15 +19,15 @@ public class Result : IResult
 
     public static IResult Fail(string message)
     {
-        return new Result { Succeeded = false, Messages = new() { new Result(message) } };
+        return new Result { Succeeded = false, Messages = new() { new ResponseMessage(message) } };
     }
     public static IResult Fail(string message, string url)
     {
-        return new Result { Succeeded = false, Messages = new() { new Result(message, url) } };
+        return new Result { Succeeded = false, Messages = new() { new ResponseMessage(message, url) } };
     }
     public static IResult Fail(List<string> messages)
     {
-        return new Result { Succeeded = false, Messages = new List<IDetailedMessage>(messages.Select(message => new Result(message))) };
+        return new Result { Succeeded = false, Messages = new List<IDetailedMessage>(messages.Select(message => new ResponseMessage(message))) };
     }
     public static IResult Fail(List<IDetailedMessage> messages)
     {
@@ -83,7 +63,7 @@ public class Result : IResult
 
     public static IResult Success(string message)
     {
-        return new Result { Succeeded = true, Messages = new () {new Result(message) } };
+        return new Result { Succeeded = true, Messages = new () {new ResponseMessage(message) } };
     }
 
     public static Task<IResult> SuccessAsync()
@@ -113,13 +93,13 @@ public class Result<T> : Result, IResult<T>
 
     public new static Result<T> Fail(string message)
     {
-        return new Result<T> { Succeeded = false, Messages = new() { new Result(message) } };
+        return new Result<T> { Succeeded = false, Messages = new() { new ResponseMessage(message) } };
     }
 
     public new static Result<T> Fail(List<string> messages)
     {
       
-        return new Result<T> { Succeeded = false, Messages = new List<IDetailedMessage>(messages.Select(message => new Result(message)))};
+        return new Result<T> { Succeeded = false, Messages = new List<IDetailedMessage>(messages.Select(message => new ResponseMessage(message)))};
     }
 
     public new static Task<Result<T>> FailAsync()
@@ -144,7 +124,7 @@ public class Result<T> : Result, IResult<T>
 
     public new static Result<T> Success(string message)
     {
-        return new Result<T> { Succeeded = true, Messages = new List<IDetailedMessage> { new Result(message) } };
+        return new Result<T> { Succeeded = true, Messages = new List<IDetailedMessage> { new ResponseMessage(message) } };
     }
 
     public static Result<T> Success(T data)
@@ -154,12 +134,12 @@ public class Result<T> : Result, IResult<T>
 
     public static Result<T> Success(T data, string message)
     {
-        return new Result<T> { Succeeded = true, Data = data,Messages= new List<IDetailedMessage> { new Result(message) } };
+        return new Result<T> { Succeeded = true, Data = data,Messages= new List<IDetailedMessage> { new ResponseMessage(message) } };
     }
 
     public static Result<T> Success(T data, List<string> messages)
     {
-        return new Result<T> { Succeeded = true, Data = data, Messages = new List<IDetailedMessage>(messages.Select(message => new Result(message))) };
+        return new Result<T> { Succeeded = true, Data = data, Messages = new List<IDetailedMessage>(messages.Select(message => new ResponseMessage(message))) };
     }
 
     public new static Task<Result<T>> SuccessAsync()
