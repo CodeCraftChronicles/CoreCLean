@@ -26,8 +26,8 @@ Ce modèle contient les sous-projets suivants, chacun étant conçu pour remplir
 
 Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 
-- .NET Core SDK [lien vers la page de téléchargement]
-- Git [lien vers la page de téléchargement]
+- .NET Core SDK ( https://dotnet.microsoft.com/en-us/download/visual-studio-sdks )
+- Git ( https://git-scm.com/downloads )
 
 ## Comment utiliser
 
