@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CoreClean.BCL.Shared\CoreClean.BCL.Shared.csproj" />
+    <ProjectReference Include="..\Domain\CoreClean.BCL.Domaine.csproj" />
+  </ItemGroup>
+
 </Project>

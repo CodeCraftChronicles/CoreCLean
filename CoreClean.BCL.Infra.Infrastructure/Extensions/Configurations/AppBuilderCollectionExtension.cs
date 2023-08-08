@@ -1,7 +1,7 @@
 ﻿using CoreClean.BCL.Application.Configurations;
 
 using Microsoft.Extensions.Configuration;
-namespace CoreClean.BCL.Infra.Infrastructure.Configurations
+namespace CoreClean.BCL.Infra.Infrastructure.Extensions.Configurations
 {
     public static class AppBuilderCollectionExtension
     {
