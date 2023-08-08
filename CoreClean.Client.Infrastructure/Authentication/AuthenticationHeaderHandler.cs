@@ -1,12 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CoreClean.BCL.Shared.Constants.Storage;
+using CoreClean.BCL.Shared.Interfaces;
 
-namespace CoreClean.Client.Infrastructure.Authentication
+using System.Net.Http.Headers;
+
+namespace CoreClean.Client.Infrastructure.Authentication;
+
+public class AuthenticationHeaderHandler : DelegatingHandler
 {
-    internal class AuthenticationHeaderHandler
+    private readonly IClientSideStringSotorageService localStorage;
+
+    public AuthenticationHeaderHandler(IClientSideStringSotorageService localStorage)
+        => this.localStorage = localStorage;
+
+    protected override async Task<HttpResponseMessage> SendAsync(
+        HttpRequestMessage request,
+        CancellationToken cancellationToken)
     {
+        if (request.Headers.Authorization?.Scheme != "Bearer")
+        {
+            var savedToken = await this.localStorage.GetItemAsync(StorageConstants.Local.AuthToken);
+
+            if (!string.IsNullOrWhiteSpace(savedToken))
+            {
+                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", savedToken);
+            }
+        }
+
+        return await base.SendAsync(request, cancellationToken);
     }
 }

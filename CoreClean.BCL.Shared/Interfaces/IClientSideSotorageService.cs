@@ -1,8 +1,8 @@
 ﻿namespace CoreClean.BCL.Shared.Interfaces
 {
-    public interface IClientSideSotorageService
+    public interface IClientSideStringSotorageService
     {
         public Task<string> GetItemAsync(string key);
-        public Task SetItemAsync(string key, object value);
+        public Task SetItemAsync(string key, string value);
     }
 }
