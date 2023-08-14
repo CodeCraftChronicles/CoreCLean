@@ -1,4 +1,6 @@
 ﻿@using System.Net.Http
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Components.Forms
 @using Microsoft.AspNetCore.Components.Routing
 @using Microsoft.AspNetCore.Components.Web
@@ -6,3 +8,20 @@
 @using Microsoft.JSInterop
 @using CleanCore.Client
 @using CleanCore.Client.Shared
+@using MudBlazor;
+
+
+@attribute [Authorize]
+@inject IAuthenticationManager _authenticationManager
+@inject IAccountManager _accountManager
+@inject NavigationManager _navigationManager
+@inject BlazorHeroStateProvider _stateProvider
+@inject IAuthorizationService _authorizationService
+@inject ISnackbar _snackBar
+@inject IDialogService _dialogService
+@inject HttpClient _httpClient
+@inject IHttpInterceptorManager _interceptor
+@inject ClientPreferenceManager _clientPreferenceManager
+@inject IUserManager _userManager
+@inject ILocalStorageService _localStorage;
+@inject IJSRuntime _jsRuntime;

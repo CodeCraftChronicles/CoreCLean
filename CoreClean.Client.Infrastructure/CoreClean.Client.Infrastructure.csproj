@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="7.0.10" />
+    <PackageReference Include="MudBlazor" Version="6.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreClean.BCL.Application\CoreClean.BCL.Application.csproj" />
     <ProjectReference Include="..\CoreClean.BCL.Shared\CoreClean.BCL.Shared.csproj" />
   </ItemGroup>
 
