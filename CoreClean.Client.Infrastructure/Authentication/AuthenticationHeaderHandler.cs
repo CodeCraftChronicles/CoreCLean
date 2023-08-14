@@ -7,9 +7,9 @@ namespace CoreClean.Client.Infrastructure.Authentication;
 
 public class AuthenticationHeaderHandler : DelegatingHandler
 {
-    private readonly IClientSideStringSotorageService localStorage;
+    private readonly IClientSideStringStorageService localStorage;
 
-    public AuthenticationHeaderHandler(IClientSideStringSotorageService localStorage)
+    public AuthenticationHeaderHandler(IClientSideStringStorageService localStorage)
         => this.localStorage = localStorage;
 
     protected override async Task<HttpResponseMessage> SendAsync(
